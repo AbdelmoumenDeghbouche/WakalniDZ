@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_btn"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:iconTint="@color/grey_back_str"
+        android:title="Home" />
+    <item
+        android:id="@+id/profile_btn"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:iconTint="@color/grey_back_str"
+        android:title="Profile" />
+    <item
+        android:id="@+id/support_btn"
+        android:icon="@drawable/btn4"
+        android:title="Support" />
+    <item
+        android:id="@+id/settings_btn"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:iconTint="@color/grey_back_str"
+        android:title="Settings" />
+
+</menu>

@@ -3,4 +3,16 @@
     <string name="Appname">WakalniDZ</string>
     <string name="food_delivery_app">Food Delivery App</string>
     <string name="get_started">Get Started</string>
+    <string name="hi">Hi ,</string>
+    <string name="Username">Abdelmoumen</string>
+    <string name="order_eat"><![CDATA[Order & Eat]]></string>
+    <string name="categories">Categories</string>
+    <string name="order_now">Order Now</string>
+    <string name="date_free_delivery">Sept 9 -Oct 11</string>
+    <string name="free_delivery">Free Delivery</string>
+    <string name="find_your_food">Find Your Food</string>
+    <string name="popular">Popular</string>
+    <string name="food_category">Pizza</string>
+    <string name="add">Add +</string>
+    <string name="food_special_name">Food Special Name</string>
 </resources>

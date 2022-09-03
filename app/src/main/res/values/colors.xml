@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_orange">#ff5e00</color>
+    <color name="Sec_orange">#dd3d00</color>
+    <color name="background_search_color">#C8C5C5</color>
+    <color name="grey_backg">#F3EDED</color>
+    <color name="grey_back_str">#7D7F80</color>
+
+    <color name="light_orange">#ffc5ab</color>
+    <color name="light_orange_2">#ABFFAF</color>
+
 </resources>

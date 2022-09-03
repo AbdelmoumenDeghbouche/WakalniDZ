@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsetsController;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.digidz.wakalnidz.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private RelativeLayout rel_get_started;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +33,18 @@ public class SplashScreenActivity extends AppCompatActivity {
         rel_get_started.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(SplashScreenActivity.this, "Welcome !", Toast.LENGTH_SHORT).show();
                 //TODO:Create Destination Activity
-                Intent intent = new Intent(SplashScreenActivity.this,SplashScreenActivity.class);
-                
+                Intent intent = new Intent(com.digidz.wakalnidz.Activities.SplashScreenActivity.this, com.digidz.wakalnidz.Activities.Main2Activity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
     }
 
     private void initViews() {
-        rel_get_started =findViewById(R.id.rel_get_started);
+        rel_get_started = findViewById(R.id.rel_get_started);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
