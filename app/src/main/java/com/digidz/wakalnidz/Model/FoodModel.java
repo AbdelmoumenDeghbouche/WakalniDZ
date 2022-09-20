@@ -1,28 +1,56 @@
 package com.digidz.wakalnidz.Model;
 
 import android.graphics.drawable.Drawable;
-import android.widget.RelativeLayout;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class FoodModel {
+public class FoodModel implements Parcelable {
+    public static final Creator<FoodModel> CREATOR = new Creator<FoodModel>() {
+        @Override
+        public FoodModel createFromParcel(Parcel in) {
+            return new FoodModel(in);
+        }
+
+        @Override
+        public FoodModel[] newArray(int size) {
+            return new FoodModel[size];
+        }
+    };
     private String foodSpecialName;
     private Drawable imageView;
+    private String food_category;
+    private Drawable img_of_food_category;
     private String category_name;
     private String price;
     private int bckg_color;
-    private RelativeLayout rel_btn_add_to_cart;
 
-    public FoodModel(String foodSpecialName, Drawable imageView, String price, RelativeLayout rel_btn_add_to_cart, int bckg_color) {
+
+    public FoodModel(String foodSpecialName, Drawable imageView, String price, int bckg_color) {
         this.foodSpecialName = foodSpecialName;
         this.imageView = imageView;
         this.price = price;
-        this.rel_btn_add_to_cart = rel_btn_add_to_cart;
         this.bckg_color = bckg_color;
     }
 
-    public FoodModel(Drawable imageView, String category_name, int bckg_color) {
-        this.imageView = imageView;
+    protected FoodModel(Parcel in) {
+        foodSpecialName = in.readString();
+        category_name = in.readString();
+        price = in.readString();
+        bckg_color = in.readInt();
+    }
+
+    public FoodModel(Drawable img_of_food_category, String category_name, int bckg_color) {
+        this.img_of_food_category = img_of_food_category;
         this.category_name = category_name;
         this.bckg_color = bckg_color;
+    }
+
+    public Drawable getImg_of_food_category() {
+        return img_of_food_category;
+    }
+
+    public void setImg_of_food_category(Drawable img_of_food_category) {
+        this.img_of_food_category = img_of_food_category;
     }
 
     public int getBckg_color() {
@@ -65,11 +93,18 @@ public class FoodModel {
         this.price = price;
     }
 
-    public RelativeLayout getRel_btn_add_to_cart() {
-        return rel_btn_add_to_cart;
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setRel_btn_add_to_cart(RelativeLayout rel_btn_add_to_cart) {
-        this.rel_btn_add_to_cart = rel_btn_add_to_cart;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(foodSpecialName);
+        parcel.writeString(category_name);
+        parcel.writeString(price);
+        parcel.writeInt(bckg_color);
     }
 }
+

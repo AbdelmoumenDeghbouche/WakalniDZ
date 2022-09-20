@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:scaleX="1.05"
+            android:scaleX="1.0"
             app:srcCompat="@drawable/background_intro" />
 
 
@@ -34,7 +34,6 @@
                 android:layout_below="@id/txt_app_name"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="80dp"
-
                 app:srcCompat="@drawable/logo" />
 
             <TextView
@@ -78,6 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:background="@drawable/background_btn_orange"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/get_started"
             android:textColor="@color/black"

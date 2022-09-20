@@ -10,6 +10,7 @@
         android:id="@+id/card_view_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -33,15 +34,24 @@
                 android:fontFamily="@font/poppins_medium"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:layout_gravity="center"
                 android:text="@string/food_special_name"
                 android:textColor="@color/black" />
 
             <ImageView
                 android:id="@+id/img_of_food"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/pop_1" />
+
+            <ImageView
+                android:id="@+id/img_of_food_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/pop_1" />
+                android:src="@drawable/cat_1"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/txt_category_of_food"
@@ -72,7 +82,7 @@
                     android:layout_gravity="center"
                     android:layout_toRightOf="@+id/txt_price_of_food"
                     android:fontFamily="@font/poppins_medium"
-                    android:text=" $"
+                    android:text=" DZD"
                     android:textColor="@color/main_orange"
                     android:visibility="gone" />
             </RelativeLayout>
