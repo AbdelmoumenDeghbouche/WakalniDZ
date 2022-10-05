@@ -18,6 +18,15 @@ public class FoodModel implements Parcelable {
     };
     private String foodSpecialName;
     private Drawable imageView;
+
+    public String getFood_category() {
+        return food_category;
+    }
+
+    public void setFood_category(String food_category) {
+        this.food_category = food_category;
+    }
+
     private String food_category;
     private Drawable img_of_food_category;
     private String category_name;
@@ -25,12 +34,15 @@ public class FoodModel implements Parcelable {
     private int bckg_color;
 
 
-    public FoodModel(String foodSpecialName, Drawable imageView, String price, int bckg_color) {
+    public FoodModel(String food_category, String foodSpecialName, Drawable imageView, String price, int bckg_color) {
         this.foodSpecialName = foodSpecialName;
         this.imageView = imageView;
         this.price = price;
         this.bckg_color = bckg_color;
+        this.food_category = food_category;
+
     }
+
 
     protected FoodModel(Parcel in) {
         foodSpecialName = in.readString();

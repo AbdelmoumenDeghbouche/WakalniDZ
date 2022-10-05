@@ -14,179 +14,12 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/crd_lyt">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp">
+        <FrameLayout
+            android:id="@+id/frame_main_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/rel_username_img_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30sp"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/txt_hi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/hi"
-                    android:textColor="@color/Sec_orange"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txt_username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/txt_hi"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/Username"
-                    android:textColor="@color/Sec_orange"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        app:srcCompat="@drawable/profile" />
-                </RelativeLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_username"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/order_eat"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <EditText
-                android:id="@+id/edit_txt_find_food"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/rel_username_img_profile"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:background="@drawable/search_edit_text_background"
-                android:drawableStart="@drawable/search"
-                android:drawablePadding="10dp"
-                android:hint="@string/find_your_food"
-                android:paddingStart="10dp"
-                android:textSize="18sp"
-                android:textStyle="italic" />
-
-            <RelativeLayout
-                android:id="@+id/rel_mid_main"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_below="@id/edit_txt_find_food"
-                android:layout_marginLeft="30sp"
-                android:layout_marginTop="30sp"
-                android:layout_marginRight="30sp"
-                android:background="@drawable/light_orange_background">
-
-                <ImageView
-                    android:id="@+id/image_banner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:src="@drawable/image_banner" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@+id/date_free_delivery"
-                    android:layout_centerInParent="true"
-                    android:layout_toRightOf="@+id/image_banner"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="@string/free_delivery"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/date_free_delivery"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_toRightOf="@+id/image_banner"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/date_free_delivery"
-                    android:textColor="@color/black" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/date_free_delivery"
-                    android:layout_margin="10dp"
-                    android:layout_toRightOf="@id/image_banner"
-                    android:background="@drawable/background_btn_orange">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="30sp"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="center"
-                        android:text="@string/order_now"
-                        android:textColor="@color/white"
-                        android:textSize="13sp" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/txt_categories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rel_mid_main"
-                android:layout_alignStart="@+id/rel_mid_main"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/categories"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_food_categories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_categories"
-                android:layout_alignStart="@+id/txt_categories"
-                android:layout_marginTop="5dp" />
-
-            <TextView
-                android:id="@+id/txt_popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rv_food_categories"
-                android:layout_alignStart="@id/rv_food_categories"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/popular"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <FrameLayout
-                android:id="@+id/frame_food_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt_popular"
-                android:layout_alignStart="@id/txt_popular"
-                android:layout_marginTop="5dp" />
-
-
-        </RelativeLayout>
+        </FrameLayout>
 
     </ScrollView>
 
@@ -347,10 +180,12 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_go_to_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:elevation="3dp"
+
             android:src="@drawable/shopping_cart"
             app:backgroundTint="@color/main_orange"
             app:layout_anchor="@id/btm_app_bar_main" />

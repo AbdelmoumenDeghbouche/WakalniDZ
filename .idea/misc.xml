@@ -20,6 +20,7 @@
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_checkbox_svgrepo_com.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_checkbox_unchecked_svgrepo_com.xml" value="0.132" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_iluustratuin_question_mark.xml" value="0.185" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_launcher_background.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_letter_m_svgrepo_com.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_letter_s_svgrepo_com.xml" value="0.186" />
@@ -37,11 +38,13 @@
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_details.xml" value="0.2923076923076923" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_main2.xml" value="0.24210526315789474" />
-        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/cart_checkout_card_view.xml" value="0.4" />
-        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/food_card_view.xml" value="0.35697940503432496" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/cart_checkout_card_view.xml" value="0.34870317002881845" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/food_card_view.xml" value="0.536" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/food_categ_card_view.xml" value="0.536" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/fragment_cart.xml" value="0.264" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/fragment_cart_final.xml" value="0.25" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/fragment_food_carts.xml" value="0.1" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/menu-v26/bottomappbar.xml" value="0.25" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/menu/bottomappbar.xml" value="0.24895833333333334" />
       </map>

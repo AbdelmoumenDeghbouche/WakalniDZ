@@ -6,9 +6,10 @@
     tools:context=".ViewModel.CartFragment">
 
     <ScrollView
+        android:id="@+id/scv_cart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/txt_checkout">
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,106 +39,112 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Items Total:"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="18sp" />
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Items Total:"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txt_items_total_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0 DZD"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal">
 
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="0 DZD"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Delivery Services:"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/txt_delivery_service_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0 DZD"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Delivery Services:"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="18sp" />
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Tax:"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txt_tax_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0 DZD"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="15dp"
+                    android:orientation="horizontal">
 
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="0 DZD"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Total:"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="28sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Tax:"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="0 DZD"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="15dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Tax:"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="0 DZD"
-                    android:textColor="@color/dark_bleu"
-                    android:textSize="28sp" />
+                    <TextView
+                        android:id="@+id/txt_total_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0 DZD"
+                        android:textColor="@color/dark_bleu"
+                        android:textSize="28sp" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
@@ -147,7 +154,7 @@
         android:id="@+id/txt_checkout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/scv_cart"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -159,5 +166,47 @@
         android:text="Checkout"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rel_empty_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/image_v_c"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:paddingBottom="30dp"
+            android:src="@drawable/ic_iluustratuin_question_mark" />
+
+        <TextView
+            android:id="@+id/txt_ur_cart_is_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_v_c"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Your Cart is Empty"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/image_v_c"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/txt_ur_cart_is_empty"
+            android:src="@drawable/ic_sad_svgrepo_com" />
+
+
+    </RelativeLayout>
+
+
 </RelativeLayout>

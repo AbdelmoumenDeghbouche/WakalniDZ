@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5FAFF"
+    android:background="@color/white"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context=".Activities.DetailsActivity">
