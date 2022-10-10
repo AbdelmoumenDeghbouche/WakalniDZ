@@ -19,5 +19,7 @@
     <color name="amazing_yellow">#FEF4</color>
     <color name="Strong_orange">#FF4800</color>
     <color name="mini_black">#3D3D3D</color>
+    <color name="Special_black">#1C1C1C</color>
+    <color name="bckg_act">#F8FBFF</color>
 
 </resources>

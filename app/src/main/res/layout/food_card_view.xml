@@ -109,9 +109,9 @@
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="@string/added"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:text="@string/added"
                 android:textColor="@color/white"
                 android:textSize="13sp"
                 android:visibility="gone" />

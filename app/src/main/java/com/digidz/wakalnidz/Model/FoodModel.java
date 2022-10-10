@@ -17,24 +17,14 @@ public class FoodModel implements Parcelable {
         }
     };
     private String foodSpecialName;
-    private Drawable imageView;
-
-    public String getFood_category() {
-        return food_category;
-    }
-
-    public void setFood_category(String food_category) {
-        this.food_category = food_category;
-    }
-
+    private String imageView;
     private String food_category;
     private Drawable img_of_food_category;
     private String category_name;
     private String price;
     private int bckg_color;
 
-
-    public FoodModel(String food_category, String foodSpecialName, Drawable imageView, String price, int bckg_color) {
+    public FoodModel(String food_category, String foodSpecialName, String imageView, String price, int bckg_color) {
         this.foodSpecialName = foodSpecialName;
         this.imageView = imageView;
         this.price = price;
@@ -43,7 +33,6 @@ public class FoodModel implements Parcelable {
 
     }
 
-
     protected FoodModel(Parcel in) {
         foodSpecialName = in.readString();
         category_name = in.readString();
@@ -51,10 +40,19 @@ public class FoodModel implements Parcelable {
         bckg_color = in.readInt();
     }
 
+
     public FoodModel(Drawable img_of_food_category, String category_name, int bckg_color) {
         this.img_of_food_category = img_of_food_category;
         this.category_name = category_name;
         this.bckg_color = bckg_color;
+    }
+
+    public String getFood_category() {
+        return food_category;
+    }
+
+    public void setFood_category(String food_category) {
+        this.food_category = food_category;
     }
 
     public Drawable getImg_of_food_category() {
@@ -81,11 +79,11 @@ public class FoodModel implements Parcelable {
         this.foodSpecialName = foodSpecialName;
     }
 
-    public Drawable getImageView() {
+    public String getImageView() {
         return imageView;
     }
 
-    public void setImageView(Drawable imageView) {
+    public void setImageView(String imageView) {
         this.imageView = imageView;
     }
 

@@ -2,14 +2,13 @@ package com.digidz.wakalnidz.Activities;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.transition.Slide;
-import android.transition.TransitionManager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.WindowInsetsController;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -20,11 +19,15 @@ import com.digidz.wakalnidz.R;
 import com.digidz.wakalnidz.View.CartFragment;
 import com.digidz.wakalnidz.View.MainFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Main2Activity extends AppCompatActivity {
 
+    FirebaseAuth mAuth;
     private FloatingActionButton fab_go_to_cart;
     private Fragment dynamic_fragment;
+    private LinearLayout lin_layout_settings;
     private int counter = 0;
 
     @Override
@@ -34,7 +37,31 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(com.digidz.wakalnidz.R.layout.activity_main2);
         modifysupportactiobar();
         initViews();
+        initFirebaseAuth();
         fragments_Logic();
+        businessLogic();
+    }
+
+    private void businessLogic() {
+        signOutBusinessLogic();
+    }
+
+    private void signOutBusinessLogic() {
+        lin_layout_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Toast.makeText(Main2Activity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Main2Activity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    private void initFirebaseAuth() {
+        mAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -59,7 +86,7 @@ public class Main2Activity extends AppCompatActivity {
                         .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
                         .replace(R.id.frame_main_container, new CartFragment())
                         .commit();
-                counter=0;
+                counter = 0;
             }
         });
     }
@@ -67,6 +94,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private void initViews() {
         fab_go_to_cart = findViewById(R.id.fab_go_to_cart);
+        lin_layout_settings = (LinearLayout) findViewById(R.id.lin_layout_settings);
     }
 
     private void handling_main_fragment() {
@@ -100,7 +128,19 @@ public class Main2Activity extends AppCompatActivity {
 
         } else if (counter == 2) {
             super.onBackPressed();
-            counter=0;
+            counter = 0;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            Intent intent = new Intent(Main2Activity.this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         }
     }
 }

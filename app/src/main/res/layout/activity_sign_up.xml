@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bckg_act"
+    tools:context=".Activities.SignUpActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_logo_skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_wakalni_first_logo" />
+
+        <RelativeLayout
+            android:id="@+id/rel_layout_skip_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_skip_registration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sk_modernist_regular"
+                android:gravity="center"
+                android:text="Skip"
+                android:textColor="@color/main_orange" />
+
+            <View
+                android:layout_width="26dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/txt_skip_registration"
+                android:background="@color/main_orange" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_create_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_logo_skip"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/dm_sans_bold"
+        android:text="Create an account"
+        android:textColor="@color/Special_black"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/txt_welcome_pls_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_create_acc"
+        android:layout_marginLeft="44dp"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Welcome friend, enter your details so lets get started in ordering food."
+        android:textColor="#3D3D3D" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lin_login_go_to_signup"
+        android:layout_below="@+id/txt_welcome_pls_register">
+
+        <LinearLayout
+            android:id="@+id/lin_layout_email_pass_confirm_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_full_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Full Name"
+                    android:textColor="#3D3D3D"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edt_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_full_name"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="21dp"
+                    android:background="@drawable/edit_text_style"
+                    android:fontFamily="@font/sk_modernist_regular"
+                    android:hint="Full Name"
+                    android:maxLines="1"
+                    android:padding="23dp"
+                    android:textColor="#AAACAE"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_email_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Email Address"
+                    android:textColor="#3D3D3D"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_email_address"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="21dp"
+                    android:background="@drawable/edit_text_style"
+                    android:fontFamily="@font/sk_modernist_regular"
+                    android:hint="Enter email"
+                    android:maxLines="1"
+                    android:padding="23dp"
+                    android:text="Minouakikou@gmail.com"
+                    android:textColor="#AAACAE"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Password"
+                    android:textColor="#3D3D3D"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edt_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_password"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="21dp"
+                    android:background="@drawable/edit_text_style"
+                    android:fontFamily="@font/sk_modernist_regular"
+                    android:hint="Enter password"
+                    android:maxLines="1"
+                    android:padding="23dp"
+                    android:text="Minouc141@"
+                    android:textColor="#AAACAE"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_confirm_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Confirm Password"
+                    android:textColor="#3D3D3D"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edt_confirm_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_confirm_password"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginBottom="21dp"
+                    android:background="@drawable/edit_text_style"
+                    android:fontFamily="@font/sk_modernist_regular"
+                    android:hint="Confirm Password"
+                    android:maxLines="1"
+                    android:padding="23dp"
+                    android:text="minoucc141"
+                    android:textColor="#AAACAE"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/lin_login_go_to_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/img_view_google_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:paddingEnd="30dp"
+            android:src="@drawable/ic_google_sign_in"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_view_btn_create_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingEnd="15dp"
+            android:src="@drawable/ic_create_acc_btn" />
+
+        <TextView
+            android:id="@+id/txt_login_to_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/sk_modernist_bold"
+            android:paddingStart="5dp"
+            android:text="Login to my account"
+            android:textColor="#FE554A"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

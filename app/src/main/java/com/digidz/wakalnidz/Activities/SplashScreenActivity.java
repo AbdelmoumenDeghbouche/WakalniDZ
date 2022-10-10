@@ -35,8 +35,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(SplashScreenActivity.this, "Welcome !", Toast.LENGTH_SHORT).show();
                 //TODO:Create Destination Activity
-                Intent intent = new Intent(com.digidz.wakalnidz.Activities.SplashScreenActivity.this, com.digidz.wakalnidz.Activities.Main2Activity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(com.digidz.wakalnidz.Activities.SplashScreenActivity.this, SignUpActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
 
@@ -47,7 +47,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     private void initViews() {
         rel_get_started = findViewById(R.id.rel_get_started);
     }
- 
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void modifysupportactiobar() {
         if (getSupportActionBar() != null) {

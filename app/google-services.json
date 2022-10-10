@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191472425349",
+    "project_id": "wakalnidz",
+    "storage_bucket": "wakalnidz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191472425349:android:3c688876c95dff50c58cec",
+        "android_client_info": {
+          "package_name": "com.digidz.wakalnidz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191472425349-ck257hks1cgtvkqgalfmeqvr415bqfni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl-f1G-MOuWZJIE_taH1C2_J-RvIL_74M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191472425349-ck257hks1cgtvkqgalfmeqvr415bqfni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

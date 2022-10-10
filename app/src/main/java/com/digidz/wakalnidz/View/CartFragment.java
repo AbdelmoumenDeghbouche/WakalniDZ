@@ -45,8 +45,6 @@ public class CartFragment extends Fragment {
     private void handlingLogicOfPricing() {
         int cost = 0;
         txt_items_total_cost.setText(String.valueOf(cost) + " DZD");
-
-
         Log.d(TAG, "handlingLogicOfPricing: " + txt_items_total_cost.getText().toString().substring(0, 2));
     }
 

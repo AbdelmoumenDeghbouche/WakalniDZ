@@ -6,6 +6,7 @@ import android.os.Parcelable;
 
 public class Cart_food_Model implements Parcelable {
 
+
     public static final Creator<Cart_food_Model> CREATOR = new Creator<Cart_food_Model>() {
         @Override
         public Cart_food_Model createFromParcel(Parcel in) {
@@ -21,10 +22,11 @@ public class Cart_food_Model implements Parcelable {
     private String price_of_multiple_items_food_in_cart_act;
     private String quantity_of_food;
     private String price_of_single_item_food_in_cart_act;
-    private Integer number_of_drawable_photo;
+    private String number_of_drawable_photo;
     private Drawable img_of_food_category;
 
-    public Cart_food_Model(String quantity_of_food, String food_name_in_cart_act, String price_of_multiple_items_food_in_cart_act, String price_of_single_item_food_in_cart_act, Integer number_of_drawable_photo) {
+
+    public Cart_food_Model(String quantity_of_food, String food_name_in_cart_act, String price_of_multiple_items_food_in_cart_act, String price_of_single_item_food_in_cart_act, String number_of_drawable_photo) {
         this.food_name_in_cart_act = food_name_in_cart_act;
         this.quantity_of_food = quantity_of_food;
 
@@ -33,16 +35,12 @@ public class Cart_food_Model implements Parcelable {
         this.number_of_drawable_photo = number_of_drawable_photo;
     }
 
-
     protected Cart_food_Model(Parcel in) {
         food_name_in_cart_act = in.readString();
         price_of_multiple_items_food_in_cart_act = in.readString();
+        quantity_of_food = in.readString();
         price_of_single_item_food_in_cart_act = in.readString();
-        if (in.readByte() == 0) {
-            number_of_drawable_photo = null;
-        } else {
-            number_of_drawable_photo = in.readInt();
-        }
+        number_of_drawable_photo = in.readString();
     }
 
     public String getQuantity_of_food() {
@@ -69,11 +67,11 @@ public class Cart_food_Model implements Parcelable {
         this.price_of_multiple_items_food_in_cart_act = price_of_multiple_items_food_in_cart_act;
     }
 
-    public Integer getNumber_of_drawable_photo() {
+    public String getNumber_of_drawable_photo() {
         return number_of_drawable_photo;
     }
 
-    public void setNumber_of_drawable_photo(Integer number_of_drawable_photo) {
+    public void setNumber_of_drawable_photo(String number_of_drawable_photo) {
         this.number_of_drawable_photo = number_of_drawable_photo;
     }
 
@@ -104,8 +102,8 @@ public class Cart_food_Model implements Parcelable {
         parcel.writeString(food_name_in_cart_act);
         parcel.writeString(price_of_multiple_items_food_in_cart_act);
         parcel.writeString(price_of_single_item_food_in_cart_act);
-        parcel.writeInt(number_of_drawable_photo);
+        parcel.writeString(number_of_drawable_photo);
         parcel.writeString(quantity_of_food);
-
     }
+
 }

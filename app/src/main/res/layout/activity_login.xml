@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bckg_act"
+    tools:context=".Activities.SignUpActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_logo_skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_wakalni_first_logo" />
+
+        <RelativeLayout
+            android:id="@+id/rel_layout_skip_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txt_skip_registration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sk_modernist_regular"
+                android:gravity="center"
+                android:text="Skip"
+                android:textColor="@color/main_orange" />
+
+            <View
+                android:layout_width="26dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/txt_skip_registration"
+                android:background="@color/main_orange" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_create_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_logo_skip"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/dm_sans_bold"
+        android:text="Login to your account"
+        android:textColor="@color/Special_black"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/txt_welcome_pls_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_create_acc"
+        android:layout_marginLeft="44dp"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Good to see you again, enter your details below to continue ordering."
+        android:textColor="#3D3D3D" />
+
+    <LinearLayout
+        android:id="@+id/lin_layout_email_pass_confirm_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_welcome_pls_register"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_email_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Email Address"
+                android:textColor="#3D3D3D"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_email_address"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                android:id="@+id/edt_email_login"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/edit_text_style"
+                android:fontFamily="@font/sk_modernist_regular"
+                android:hint="Enter email"
+                android:maxLines="1"
+                android:padding="23dp"
+                android:textColor="#AAACAE"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Password"
+                android:textColor="#3D3D3D"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/edt_pass_login"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_password"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                android:layout_marginBottom="21dp"
+                android:background="@drawable/edit_text_style"
+                android:fontFamily="@font/sk_modernist_regular"
+                android:hint="Enter password"
+                android:maxLines="1"
+                android:padding="23dp"
+                android:textColor="#AAACAE"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="18sp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/img_view_google_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingEnd="30dp"
+            android:src="@drawable/ic_google_sign_in"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/img_view_btn_login_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:paddingEnd="15dp"
+            android:src="@drawable/ic_script_netflix" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+
+            android:paddingStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Don't have a account ?"
+                android:textColor="#3D3D3D"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_sign_up_to_acc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text=" SignUp"
+                android:textColor="@color/main_orange"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

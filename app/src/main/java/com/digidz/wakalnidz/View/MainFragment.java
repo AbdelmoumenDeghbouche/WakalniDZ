@@ -18,11 +18,11 @@ import java.util.ArrayList;
 
 
 public class MainFragment extends Fragment {
-    private RecyclerView categories_rv;
-    private Food_list_adapter adapter;
-    private  ArrayList<FoodModel> foodCategories_list = new ArrayList<>();
     public static RecyclerView rv_food_with_add_to_cart;
     public static ArrayList<FoodModel> foods_list = new ArrayList<>();
+    private RecyclerView categories_rv;
+    private Food_list_adapter adapter;
+    private ArrayList<FoodModel> foodCategories_list = new ArrayList<>();
     private Food_list_adapter adapter2;
 
     @Override
@@ -48,10 +48,13 @@ public class MainFragment extends Fragment {
     }
 
     private void setting_up_list_2() {
-        FoodModel foodModel = new FoodModel("Pizza", "Pepperoni Pizza", getActivity().getDrawable(R.drawable.pop_1), "400", R.drawable.cardview_style_white);
+
+        //TO clear repeated elements when u choose a k
+        foods_list.clear();
+        FoodModel foodModel = new FoodModel("Pizza", "Pepperoni Pizza", "pop_1", "400", R.drawable.cardview_style_white);
         foods_list.add(foodModel);
-        foods_list.add(new FoodModel("Burger", "        Big Burger        ", getActivity().getDrawable(R.drawable.pop_2), "300", R.drawable.cardview_style_white));
-        foods_list.add(new FoodModel("Pizza", "Margarette Pizza", getActivity().getDrawable(R.drawable.pop_3), "200", R.drawable.cardview_style_white));
+        foods_list.add(new FoodModel("Burger", "        Big Burger        ", "pop_2", "300", R.drawable.cardview_style_white));
+        foods_list.add(new FoodModel("Pizza", "Margarette Pizza", "pop_3", "200", R.drawable.cardview_style_white));
 
     }
 

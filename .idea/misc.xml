@@ -15,11 +15,14 @@
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/cardview_style_4.xml" value="0.1" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/cardview_style_5.xml" value="0.1" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/corner_black.xml" value="0.186" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/edit_text_style.xml" value="0.189" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_checkbox_svgrepo_com.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_checkbox_unchecked_svgrepo_com.xml" value="0.132" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_create_acc_btn.xml" value="0.2555" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_google_sign_in.xml" value="0.189" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_iluustratuin_question_mark.xml" value="0.185" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_launcher_background.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_letter_m_svgrepo_com.xml" value="0.186" />
@@ -27,6 +30,7 @@
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_letter_s_svgrepo_com2.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_minus_svgrepo_com.xml" value="0.2" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_plus_svgrepo_com.xml" value="0.132" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/ic_script_netflix.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/light_orange_background.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/search_edit_text_background.xml" value="0.186" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/drawable/transperant_backg.xml" value="0.186" />
@@ -35,9 +39,12 @@
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/font/poppins_bold.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/font/poppins_medium.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/font/poppins_semibold.xml" value="0.28020833333333334" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/font/sk_modernist.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_details.xml" value="0.2923076923076923" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_main2.xml" value="0.24210526315789474" />
+        <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/cart_checkout_card_view.xml" value="0.34870317002881845" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/food_card_view.xml" value="0.536" />
         <entry key="..\:/Users/Minou/AndroidStudioProjects/WakalniDZ/app/src/main/res/layout/food_categ_card_view.xml" value="0.536" />

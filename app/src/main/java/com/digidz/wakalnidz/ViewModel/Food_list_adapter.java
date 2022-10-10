@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.digidz.wakalnidz.Activities.DetailsActivity;
 import com.digidz.wakalnidz.Model.Cart_food_Model;
 import com.digidz.wakalnidz.Model.FoodModel;
@@ -54,7 +55,6 @@ public class Food_list_adapter extends RecyclerView.Adapter<Food_list_adapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         //TODO: fix when u get back from cart fragment if food model already exist in cart u need to let the add text view in main activity as added not add +
-
         if (foodModelArrayList.get(position).getFoodSpecialName() == null) {
             holder.txt_price_of_food.setVisibility(View.GONE);
             holder.txt_food_special_name.setVisibility(View.GONE);
@@ -65,20 +65,26 @@ public class Food_list_adapter extends RecyclerView.Adapter<Food_list_adapter.Vi
         } else {
             holder.txt_category_of_food.setVisibility(View.GONE);
             holder.txt_dollar.setVisibility(View.VISIBLE);
+            Glide.with(holder.itemView.getContext())
+                    .load(holder.itemView.getContext().getResources().getIdentifier(foodModelArrayList.get(position).getImageView(), "drawable", holder.itemView.getContext().getPackageName()))
+                    .into(holder.img_of_food);
         }
+
+//        handleImgLogicByGlide(holder.img_of_food, position, context);
 
         holder.txt_food_special_name.setText(foodModelArrayList.get(position).getFoodSpecialName());
         holder.txt_category_of_food.setText(foodModelArrayList.get(position).getCategory_name());
         holder.txt_price_of_food.setText(foodModelArrayList.get(position).getPrice());
         holder.card_view_food.setBackgroundResource(foodModelArrayList.get(position).getBckg_color());
-        holder.img_of_food.setImageDrawable(foodModelArrayList.get(position).getImageView());
         holder.img_of_food_category.setImageDrawable(foodModelArrayList.get(position).getImg_of_food_category());
         holder.img_of_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailsActivity.class);
+
                 intent.putExtra("FoodModel", foodModelArrayList.get(position));
-                intent.putExtra("image", Utils.keyDrawableHashMap.get(String.valueOf(position + 1)));
+                int ResourceID = holder.itemView.getContext().getResources().getIdentifier(foodModelArrayList.get(position).getImageView(), "drawable", holder.itemView.getContext().getPackageName());
+                intent.putExtra("image", ResourceID);
                 Log.d(TAG, "onClick: " + foodModelArrayList.get(position).getImageView().toString());
                 context.startActivity(intent);
 
@@ -103,7 +109,7 @@ public class Food_list_adapter extends RecyclerView.Adapter<Food_list_adapter.Vi
         holder.txt_view_add_to_cart_from_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utils.Cart_foods_list.add(new Cart_food_Model("1", foodModelArrayList.get(position).getFoodSpecialName(), foodModelArrayList.get(position).getPrice(), foodModelArrayList.get(position).getPrice(), Utils.keyDrawableHashMap.get(String.valueOf(position + 1))));
+                Utils.Cart_foods_list.add(new Cart_food_Model("1", foodModelArrayList.get(position).getFoodSpecialName(), foodModelArrayList.get(position).getPrice(), foodModelArrayList.get(position).getPrice(), foodModelArrayList.get(position).getImageView()));
                 animationToLeft();
 
             }
@@ -123,12 +129,18 @@ public class Food_list_adapter extends RecyclerView.Adapter<Food_list_adapter.Vi
         holder.img_of_food_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Food_list_adapter food_list_adapter = new Food_list_adapter(foodModelList(foodModelArrayList.get(position).getCategory_name().toString().trim().toLowerCase(), MainFragment.foods_list), context);
                 MainFragment.rv_food_with_add_to_cart.setAdapter(food_list_adapter);
             }
         });
+
     }
+
+//    private void handleImgLogicByGlide(ImageView img_of_food, int position, Context context) {
+//        Glide.with(context)
+//                .load(foodModelArrayList.get(position).getImageView())
+//                .into(img_of_food);
+//    }
 
     private ArrayList<FoodModel> foodModelList(String category, ArrayList<FoodModel> foodModelArrayList1) {
         ArrayList<FoodModel> arrayList = new ArrayList<>();

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.digidz.wakalnidz.Model.Cart_food_Model;
 import com.digidz.wakalnidz.R;
 import com.digidz.wakalnidz.Repositories.Utils;
@@ -42,7 +43,9 @@ public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.img_of_food_in_cart_act.setImageDrawable(context.getDrawable(Utils.Cart_foods_list.get(position).getNumber_of_drawable_photo()));
+        Glide.with(holder.itemView.getContext())
+                .load(holder.itemView.getContext().getResources().getIdentifier(cartFoodModelArrayList.get(position).getNumber_of_drawable_photo(), "drawable", holder.itemView.getContext().getPackageName()))
+                .into(holder.img_of_food_in_cart_act);
         holder.txt_title_of_food_in_cart_activity.setText(Utils.Cart_foods_list.get(position).getFood_name_in_cart_act().trim());
         holder.txt_price_of_single_item_in_cart.setText(Utils.Cart_foods_list.get(position).getPrice_of_single_item_food_in_cart_act());
         holder.txt_add_quantity_of_food_in_cart.setOnClickListener(new View.OnClickListener() {

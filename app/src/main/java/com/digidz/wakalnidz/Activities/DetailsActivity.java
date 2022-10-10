@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.digidz.wakalnidz.Model.FoodModel;
 import com.digidz.wakalnidz.R;
 
@@ -47,7 +48,10 @@ public class DetailsActivity extends AppCompatActivity {
             int ss = intent.getIntExtra("image", 0);
             Log.d(TAG, "ssss: " + ss);
 
-            img_of_food_in_details_act.setImageDrawable(getDrawable(ss));
+
+            Glide.with(this)
+                    .load(ss)
+                    .into(img_of_food_in_details_act);
             Log.d(TAG, "businessLogic: " + Drawable.createFromPath(intent.getStringExtra("Foodmodel_str")));
         }
 
