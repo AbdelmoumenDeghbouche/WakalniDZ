@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowInsetsController;
 import android.widget.LinearLayout;
@@ -24,10 +25,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Main2Activity extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
+    public static String nameOfUser;
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
     private FloatingActionButton fab_go_to_cart;
     private Fragment dynamic_fragment;
-    private LinearLayout lin_layout_settings;
+    private LinearLayout lin_layout_settings, lin_layout_home;
     private int counter = 0;
 
     @Override
@@ -39,11 +42,33 @@ public class Main2Activity extends AppCompatActivity {
         initViews();
         initFirebaseAuth();
         fragments_Logic();
+
         businessLogic();
+
+
     }
 
     private void businessLogic() {
         signOutBusinessLogic();
+        Intent intent = getIntent();
+        if (intent != null) {
+            nameOfUser = intent.getStringExtra("UserName");
+            Log.d(TAG, "NameOfUser: " + nameOfUser);
+        }
+        bottomActionBarBL();
+
+    }
+
+    private void bottomActionBarBL() {
+        lin_layout_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+                        .replace(R.id.frame_main_container, new MainFragment())
+                        .commit();
+            }
+        });
     }
 
     private void signOutBusinessLogic() {
@@ -62,6 +87,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private void initFirebaseAuth() {
         mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
     }
 
 
@@ -94,7 +120,8 @@ public class Main2Activity extends AppCompatActivity {
 
     private void initViews() {
         fab_go_to_cart = findViewById(R.id.fab_go_to_cart);
-        lin_layout_settings = (LinearLayout) findViewById(R.id.lin_layout_settings);
+        lin_layout_settings = findViewById(R.id.lin_layout_settings);
+        lin_layout_home = (LinearLayout) findViewById(R.id.lin_layout_home);
     }
 
     private void handling_main_fragment() {
@@ -132,6 +159,7 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -141,6 +169,10 @@ public class Main2Activity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
+        }
+        else if (user.getDisplayName()==null){
+
+
         }
     }
 }

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.ForgotPassFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundAct"
+        tools:context=".Activities.ForgetPasswordActivity">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/ic_wakalni_first_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/text_description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Reset password"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_email_address"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/sk_modernist_regular"
+            android:text="A reset code has been sent to your phone"
+            android:textAlignment="center"
+            android:textColor="#3D3D3D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_email_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/otp_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Enter code"
+            android:textColor="#3D3D3D"
+            android:textSize="12sp" />
+
+        <com.chaos.view.PinView
+            android:id="@+id/otp_number"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:cursorVisible="false"
+            android:hint="******"
+            android:inputType="number"
+            android:itemBackground="@color/grey_backg"
+            android:textColor="@color/mini_black"
+            android:textColorHint="@color/mini_black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:hideLineWhenFilled="true"
+            app:itemCount="6"
+            app:itemHeight="50dp"
+            app:itemRadius="15dp"
+            app:itemSpacing="9dp"
+            app:itemWidth="45dp"
+            app:lineColor="@color/main_orange"
+            app:lineWidth="1dp"
+            app:viewType="rectangle" />
+
+
+        <TextView
+            android:id="@+id/txt_reset_pass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/otp_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_btn_orange"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Reset password"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

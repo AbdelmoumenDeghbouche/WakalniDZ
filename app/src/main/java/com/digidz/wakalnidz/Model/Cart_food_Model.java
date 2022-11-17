@@ -4,8 +4,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Cart_food_Model implements Parcelable {
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+@IgnoreExtraProperties
+public class Cart_food_Model implements Parcelable {
 
     public static final Creator<Cart_food_Model> CREATOR = new Creator<Cart_food_Model>() {
         @Override
@@ -25,6 +32,8 @@ public class Cart_food_Model implements Parcelable {
     private String number_of_drawable_photo;
     private Drawable img_of_food_category;
 
+    public Cart_food_Model() {
+    }
 
     public Cart_food_Model(String quantity_of_food, String food_name_in_cart_act, String price_of_multiple_items_food_in_cart_act, String price_of_single_item_food_in_cart_act, String number_of_drawable_photo) {
         this.food_name_in_cart_act = food_name_in_cart_act;
@@ -41,6 +50,19 @@ public class Cart_food_Model implements Parcelable {
         quantity_of_food = in.readString();
         price_of_single_item_food_in_cart_act = in.readString();
         number_of_drawable_photo = in.readString();
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("food_name_in_cart_act", food_name_in_cart_act);
+        result.put("price_of_multiple_items_food_in_cart_act", price_of_multiple_items_food_in_cart_act);
+        result.put("quantity_of_food", quantity_of_food);
+        result.put("price_of_single_item_food_in_cart_act", price_of_single_item_food_in_cart_act);
+        result.put("number_of_drawable_photo", number_of_drawable_photo);
+        result.put("img_of_food_category", img_of_food_category);
+
+        return result;
     }
 
     public String getQuantity_of_food() {
@@ -93,6 +115,7 @@ public class Cart_food_Model implements Parcelable {
 
 
     @Override
+
     public int describeContents() {
         return 0;
     }
@@ -106,4 +129,16 @@ public class Cart_food_Model implements Parcelable {
         parcel.writeString(quantity_of_food);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cart_food_Model)) return false;
+        Cart_food_Model that = (Cart_food_Model) o;
+        return Objects.equals(food_name_in_cart_act, that.food_name_in_cart_act) && Objects.equals(price_of_multiple_items_food_in_cart_act, that.price_of_multiple_items_food_in_cart_act) && Objects.equals(quantity_of_food, that.quantity_of_food) && Objects.equals(price_of_single_item_food_in_cart_act, that.price_of_single_item_food_in_cart_act) && Objects.equals(number_of_drawable_photo, that.number_of_drawable_photo) && Objects.equals(img_of_food_category, that.img_of_food_category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(food_name_in_cart_act, price_of_multiple_items_food_in_cart_act, quantity_of_food, price_of_single_item_food_in_cart_act, number_of_drawable_photo, img_of_food_category);
+    }
 }

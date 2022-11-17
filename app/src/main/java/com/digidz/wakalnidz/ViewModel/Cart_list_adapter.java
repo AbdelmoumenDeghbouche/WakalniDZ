@@ -23,8 +23,8 @@ import com.digidz.wakalnidz.View.CartFragment;
 import java.util.ArrayList;
 
 public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.ViewHolder> {
+    private final Context context;
     private ArrayList<Cart_food_Model> cartFoodModelArrayList = new ArrayList<>();
-    private Context context;
     private int cost, service_cost, total_quantity;
 
     public Cart_list_adapter(ArrayList<Cart_food_Model> cartFoodModelArrayList, Context context) {
@@ -44,10 +44,12 @@ public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Glide.with(holder.itemView.getContext())
-                .load(holder.itemView.getContext().getResources().getIdentifier(cartFoodModelArrayList.get(position).getNumber_of_drawable_photo(), "drawable", holder.itemView.getContext().getPackageName()))
+                .load(holder.itemView.getContext().getResources().getIdentifier
+                        (cartFoodModelArrayList.get(position).
+                                getNumber_of_drawable_photo().toString(), "drawable", holder.itemView.getContext().getPackageName()))
                 .into(holder.img_of_food_in_cart_act);
-        holder.txt_title_of_food_in_cart_activity.setText(Utils.Cart_foods_list.get(position).getFood_name_in_cart_act().trim());
-        holder.txt_price_of_single_item_in_cart.setText(Utils.Cart_foods_list.get(position).getPrice_of_single_item_food_in_cart_act());
+        holder.txt_title_of_food_in_cart_activity.setText(cartFoodModelArrayList.get(position).getFood_name_in_cart_act().trim());
+        holder.txt_price_of_single_item_in_cart.setText(cartFoodModelArrayList.get(position).getPrice_of_single_item_food_in_cart_act());
         holder.txt_add_quantity_of_food_in_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,13 +70,13 @@ public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.Vi
         holder.txt_minus_quantity_of_food_in_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int d = Integer.parseInt(cartFoodModelArrayList.get(position).getQuantity_of_food().toString());
+                int d = Integer.parseInt(cartFoodModelArrayList.get(position).getQuantity_of_food());
                 d = d - 1;
                 cartFoodModelArrayList.get(position).setQuantity_of_food(String.valueOf(d));
                 holder.txt_quantity_of_food_in_cart.setText(cartFoodModelArrayList.get(position).getQuantity_of_food());
                 notifyDataSetChanged();
                 Utils.price_of_multiple_items = d;
-                CartFragment.txt_items_total_cost.setText(String.valueOf(cost) + " DZD");
+                CartFragment.txt_items_total_cost.setText(cost + " DZD");
                 notifyDataSetChanged();
 
                 if (cartFoodModelArrayList.get(position).getQuantity_of_food().equals("0")) {
@@ -99,7 +101,7 @@ public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.Vi
             cost = cost + (Integer.parseInt(cartFoodModel.getPrice_of_multiple_items_food_in_cart_act()));
             total_quantity = total_quantity + (Integer.parseInt(cartFoodModel.getQuantity_of_food()));
         }
-        CartFragment.txt_items_total_cost.setText(String.valueOf(cost) + " DZD");
+        CartFragment.txt_items_total_cost.setText(cost + " DZD");
         treatPriceOfDeliveryServiceLogic();
         holder.txt_quantity_of_food_in_cart.setText(cartFoodModelArrayList.get(position).getQuantity_of_food());
 
@@ -108,21 +110,21 @@ public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.Vi
     private void treatPriceOfDeliveryServiceLogic() {
         if (total_quantity >= 10) {
             service_cost = 100;
-            CartFragment.txt_delivery_service_cost.setText(String.valueOf(service_cost) + " DZD");
+            CartFragment.txt_delivery_service_cost.setText(service_cost + " DZD");
 
         } else {
             service_cost = 50;
-            CartFragment.txt_delivery_service_cost.setText(String.valueOf(service_cost) + " DZD");
+            CartFragment.txt_delivery_service_cost.setText(service_cost + " DZD");
 
         }
-        CartFragment.txt_total_cost.setText(String.valueOf(cost + service_cost) + " DZD");
+        CartFragment.txt_total_cost.setText(cost + service_cost + " DZD");
 
     }
 
 
     private void treatPriceOfFoodLogic(TextView txt_price_of_single_item_in_cart, TextView txt_price_of_multiple_item_in_cart, int position, TextView price_of_quantity_of_food, TextView quantity_of_food) {
 
-        txt_price_of_single_item_in_cart.setText(Utils.Cart_foods_list.get(position).getPrice_of_single_item_food_in_cart_act());
+        txt_price_of_single_item_in_cart.setText(cartFoodModelArrayList.get(position).getPrice_of_single_item_food_in_cart_act());
 
         int i = Integer.parseInt(txt_price_of_single_item_in_cart.getText().toString());
         int d;
@@ -147,8 +149,13 @@ public class Cart_list_adapter extends RecyclerView.Adapter<Cart_list_adapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txt_title_of_food_in_cart_activity, txt_price_of_single_item_in_cart, txt_price_of_multiple_item_in_cart, txt_add_quantity_of_food_in_cart, txt_minus_quantity_of_food_in_cart, txt_quantity_of_food_in_cart;
-        private ImageView img_of_food_in_cart_act;
+        private final TextView txt_title_of_food_in_cart_activity;
+        private final TextView txt_price_of_single_item_in_cart;
+        private final TextView txt_price_of_multiple_item_in_cart;
+        private final TextView txt_add_quantity_of_food_in_cart;
+        private final TextView txt_minus_quantity_of_food_in_cart;
+        private final TextView txt_quantity_of_food_in_cart;
+        private final ImageView img_of_food_in_cart_act;
 
 
         public ViewHolder(@NonNull View itemView) {

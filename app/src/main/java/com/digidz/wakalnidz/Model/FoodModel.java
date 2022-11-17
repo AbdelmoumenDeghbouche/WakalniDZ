@@ -24,6 +24,9 @@ public class FoodModel implements Parcelable {
     private String price;
     private int bckg_color;
 
+    public FoodModel() {
+    }
+
     public FoodModel(String food_category, String foodSpecialName, String imageView, String price, int bckg_color) {
         this.foodSpecialName = foodSpecialName;
         this.imageView = imageView;

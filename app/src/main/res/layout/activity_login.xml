@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bckg_act"
+    android:background="@color/backgroundAct"
     tools:context=".Activities.SignUpActivity">
 
 
@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp">
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -25,10 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:visibility="gone"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/txt_skip_registration"
@@ -98,12 +99,12 @@
                 android:textSize="12sp" />
 
             <EditText
+                android:id="@+id/edt_email_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_email_address"
                 android:layout_marginStart="21dp"
                 android:layout_marginEnd="21dp"
-                android:id="@+id/edt_email_login"
                 android:layout_marginBottom="21dp"
                 android:background="@drawable/edit_text_style"
                 android:fontFamily="@font/sk_modernist_regular"
@@ -132,8 +133,8 @@
                 android:textSize="12sp" />
 
             <EditText
-                android:layout_width="match_parent"
                 android:id="@+id/edt_pass_login"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_password"
                 android:layout_marginStart="21dp"
@@ -150,6 +151,15 @@
 
         </RelativeLayout>
 
+
+        <ProgressBar
+            android:id="@+id/progress_bar_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="15dp"
+            android:indeterminateTint="@color/main_orange"
+            android:visibility="gone" />
 
     </LinearLayout>
 
@@ -179,6 +189,17 @@
             android:layout_marginBottom="15dp"
             android:paddingEnd="15dp"
             android:src="@drawable/ic_script_netflix" />
+
+        <TextView
+            android:id="@+id/txt_forgot_your_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Forgot your password ?"
+            android:textAlignment="center"
+            android:textColor="@color/main_orange"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"

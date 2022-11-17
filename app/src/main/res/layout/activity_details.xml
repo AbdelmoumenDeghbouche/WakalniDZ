@@ -12,7 +12,7 @@
         android:id="@+id/scv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/txt_add_to_cart">
+        android:layout_above="@+id/rel_that_contain_txt_add_and_added_to_cart">
 
         <LinearLayout
             android:id="@+id/lin_dd"
@@ -119,19 +119,40 @@
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:id="@+id/txt_add_to_cart"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+    <RelativeLayout
+        android:id="@+id/rel_that_contain_txt_add_and_added_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/background_btn_orange"
-        android:gravity="center"
-        android:text="Add To Cart"
-        android:textColor="@color/white" />
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/txt_add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_btn_orange"
+            android:gravity="center"
+            android:text="Add To Cart"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_added_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_btn_orange"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/added"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
 
 </RelativeLayout>

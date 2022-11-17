@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bckg_act"
+    android:background="@color/backgroundAct"
     tools:context=".Activities.SignUpActivity">
 
 
@@ -123,8 +123,8 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
 
                 <TextView
                     android:id="@+id/txt_email_address"
@@ -141,19 +141,17 @@
                     android:id="@+id/edt_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txt_email_address"
+                    android:layout_below="@+id/txt_email_address"
                     android:layout_marginStart="21dp"
                     android:layout_marginEnd="21dp"
-                    android:layout_marginBottom="21dp"
                     android:background="@drawable/edit_text_style"
                     android:fontFamily="@font/sk_modernist_regular"
                     android:hint="Enter email"
+
                     android:maxLines="1"
                     android:padding="23dp"
-                    android:text="Minouakikou@gmail.com"
                     android:textColor="#AAACAE"
                     android:textSize="14sp" />
-
 
             </RelativeLayout>
 
@@ -166,6 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="44dp"
+                    android:layout_marginTop="16sp"
                     android:layout_marginBottom="16dp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Password"
@@ -185,7 +184,6 @@
                     android:hint="Enter password"
                     android:maxLines="1"
                     android:padding="23dp"
-                    android:text="Minouc141@"
                     android:textColor="#AAACAE"
                     android:textSize="14sp" />
 
@@ -220,7 +218,6 @@
                     android:hint="Confirm Password"
                     android:maxLines="1"
                     android:padding="23dp"
-                    android:text="minoucc141"
                     android:textColor="#AAACAE"
                     android:textSize="14sp" />
 
@@ -271,5 +268,6 @@
             android:textColor="#FE554A"
             android:textSize="16sp" />
     </LinearLayout>
+
 
 </RelativeLayout>

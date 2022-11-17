@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -45,12 +46,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/profile" />
+                    android:layout_centerHorizontal="true"
+                    android:elevation="12dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ProgressBar
+                        android:id="@+id/prg_bar_profile_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="@color/main_orange"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/img_profile_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile"
+                        android:visibility="visible" />
+                </androidx.cardview.widget.CardView>
+
             </RelativeLayout>
 
             <TextView
@@ -75,67 +97,89 @@
             android:drawableStart="@drawable/search"
             android:drawablePadding="10dp"
             android:hint="@string/find_your_food"
+            android:maxLength="50"
+            android:maxLines="1"
             android:paddingStart="10dp"
             android:textSize="18sp"
             android:textStyle="italic" />
 
         <RelativeLayout
+            android:id="@+id/rel_layout_error"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@id/edit_txt_find_food"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/ic__04error"
+            android:visibility="gone">
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/rel_mid_main"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/edit_txt_find_food"
             android:layout_marginLeft="30sp"
             android:layout_marginTop="30sp"
             android:layout_marginRight="30sp"
-            android:background="@drawable/light_orange_background">
-
-            <ImageView
-                android:id="@+id/image_banner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:src="@drawable/image_banner" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/date_free_delivery"
-                android:layout_centerInParent="true"
-                android:layout_toRightOf="@+id/image_banner"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/free_delivery"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/date_free_delivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toRightOf="@+id/image_banner"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/date_free_delivery"
-                android:textColor="@color/black" />
+            android:visibility="visible">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/date_free_delivery"
-                android:layout_margin="10dp"
-                android:layout_toRightOf="@id/image_banner"
-                android:background="@drawable/background_btn_orange">
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+
+                android:background="@drawable/light_orange_background">
+
+                <ImageView
+                    android:id="@+id/image_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/image_banner" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/date_free_delivery"
                     android:layout_centerInParent="true"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="center"
-                    android:text="@string/order_now"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:layout_toEndOf="@+id/image_banner"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/free_delivery"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/date_free_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/image_banner"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/date_free_delivery"
+                    android:textColor="@color/black" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/date_free_delivery"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/image_banner"
+                    android:background="@drawable/background_btn_orange">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30sp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="@string/order_now"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </RelativeLayout>
             </RelativeLayout>
         </RelativeLayout>
+
 
         <TextView
             android:id="@+id/txt_categories"
@@ -147,7 +191,8 @@
             android:fontFamily="@font/poppins_medium"
             android:text="@string/categories"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="visible" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_food_categories"
@@ -155,19 +200,21 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_categories"
             android:layout_alignStart="@+id/txt_categories"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/txt_popular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/rv_food_categories"
-            android:layout_alignStart="@id/rv_food_categories"
+            android:layout_alignStart="@id/edit_txt_find_food"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/popular"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="visible" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_food_with_add_to_cart"
@@ -175,7 +222,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_popular"
             android:layout_alignStart="@id/txt_popular"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:visibility="visible" />
 
 
     </RelativeLayout>
